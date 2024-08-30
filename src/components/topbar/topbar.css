@@ -1,0 +1,19 @@
+.topbarContainer{
+    height: 50px;
+    width: 100%;
+    background-color: #F9F9F9;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+}
+
+.topbarLeft{
+    flex: 3;
+    background-color: #EADDFF;
+}
+
+.topbarCenter{
+    flex: 5;
+    background-color: #EADDFF;
+}
