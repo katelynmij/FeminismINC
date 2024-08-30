@@ -4,7 +4,7 @@ import "./home.css"
 export default function Home() {
     return (
         <>
-            <Topbar.jsx />
+            <Topbar />
         </>
     )
 }
