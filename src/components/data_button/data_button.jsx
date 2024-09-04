@@ -4,26 +4,41 @@ import axios from 'axios';
 import React, {useState} from "react";
 
 export default function Data_Button() {
-    const [data, setData] = useState([]);
-    const fetchData = async () => {
-        try {
-            const response = await axios.get('http://localhost:5050/api/data');
-            setData(response.data);
-        } catch (error) {
-            console.error('Error fetching data:', error);
-        }
+    const [users, setUsers] = useState([]);
+    const fetchData = () => {
+        axios.get('http://localhost:5050/getUsers')
+            .then(response => {
+                console.log(response.data);
+                setUsers(response.data);
+            })
+            .catch(err => console.log(err));
     };
-
     return (
-        <div className="button-container">
-            <button onClick={fetchData}>Display Data</button>
-            <ul>
-                {data.map((item) => (
-                    <li key={item._id}>
-                        {item.url}: {item.html}
-                    </li>
-                ))}
-            </ul>
+        <div>
+            <div className="button-container">
+                <button onClick={fetchData}>Display Data</button>
+            </div>
+            {/* Table container positioned to the right of the button */}
+            <div className="table-container">
+                {users.length > 0 && (
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {users.map(user => (
+                                <tr key={user._id}>
+                                    <td>{user.name}</td>
+                                    <td>{user.value}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                )}
+            </div>
         </div>
     );
 }

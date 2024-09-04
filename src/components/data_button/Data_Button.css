@@ -2,8 +2,8 @@
 
 .button-container {
     position: fixed;
-    top: 29%;
-    left: 20%;
+    top: 30%;
+    left: 15%;
     transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
@@ -11,15 +11,13 @@
     width: 100px;
     font: Roboto;
 
-
 }
-
 button {
     background-color: rgba(234, 221, 255, 1);
     color: rgb(0, 0, 0);
     border: none;
-    padding: 30px 60px;
-    font-size: 46px; 
+    padding: 40px 70px;
+    font-size: 25px; 
     cursor: pointer;
     border-radius: 16px;
 }
@@ -27,3 +25,31 @@ button {
 button:hover {
     background-color: rgb(144, 102, 162);
 }
+/* Style for the table container */
+.table-container {
+    position: absolute;
+    top: 30%;
+    left: 25%; /* Position the table to the right of the button */
+    transform: translateY(-50%);
+    width: 50%; /* Adjust width as needed */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px; /* Add space between the button and table */
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
