@@ -1,6 +1,4 @@
 // Code  for mongoose config in backend
-
-
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
